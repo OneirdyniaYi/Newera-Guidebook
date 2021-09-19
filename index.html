@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
   <title>池馆使用手册</title>
+  <link rel="icon" href="favicon.png" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="shortcut icon" type="image/svg+xml" href="_pic/earth-globe.svg">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <meta name="author" content="新时代外语研究中心数字化小组">
+  <meta name="description" content="本手册旨在同时为「池馆」APP 与「新时代英语」网站提供帮助文档" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link rel="stylesheet" href="_assets/vue.css">
   <link rel="stylesheet" href="_assets/ps-icon-pack.min.css">
+<style>
+  @-webkit-keyframes rotate {
+    0% {transform: rotate(0);}
+    25% {transform: rotate(90deg);}
+    50% {transform: rotate(180deg);}
+    75% {transform: rotate(270deg);}
+    100% {transform: rotate(360deg);}
+  }
+  @keyframes rotate {
+    0% {transform: rotate(0);}
+    25% {transform: rotate(90deg);}
+    50% {transform: rotate(180deg);}
+    75% {transform: rotate(270deg);}
+    100% {transform: rotate(360deg);}
+  }
+
+  .pc-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img[alt="LOGO"] {
+    transition: 1s;
+    transform-origin: center;
+    animation: rotate 10s linear infinite;
+  }
+
+  mark {
+    background-color: var(--theme-color);
+    color: cornsilk;
+    border-radius: 2px;
+  }
+
+  #homework {
+    background-color: rgba(228, 216, 208, 0.8);
+    padding: 1rem 1.2rem;
+    border-radius: .8rem;
+    margin: 0 1.5rem;
+    white-space: nowrap;
+    overflow: scroll;
+  }
+
+  #img1,
+  #img2 {
+    display: none;
+    text-align: center;
+  }
+
+</style>
 </head>
 <body>
   <div id="app">🔦 for buried treasures...</div>
@@ -33,7 +85,7 @@
       },
 
       footer: {
-        copy: '</br></br><span>Latest Update 2021.9.3</br></span>',
+        copy: '</br></br><span>Latest Update 2021.9.16</br></span>',
         auth: ' <strong>新时代外语研究中心数字化小组</strong>',
         style: 'font-size: 10px; text-align: center;',
       },
@@ -48,15 +100,17 @@
     }
   
     function showdiv1(){ 
-      if(document.getElementById("img1").style.display=="block")
-      {document.getElementById("img1").style.display="none"; }
-      else{document.getElementById("img1").style.display="block"; } 
+      var img1 = document.getElementById("img1")
+      if(img1.style.display=="block")
+      {img1.style.display="none"; }
+      else{img1.style.display="block"; } 
     }
 
-    function showdiv2(){ 
-      if(document.getElementById("img2").style.display=="block")
-      {document.getElementById("img2").style.display="none"; }
-      else{document.getElementById("img2").style.display="block"; } 
+    function showdiv2(){
+      var img2 = document.getElementById("img2")
+      if(img2.style.display=="block")
+      {img2.style.display="none"; }
+      else{img2.style.display="block"; } 
     }
 
   </script>
@@ -67,5 +121,7 @@
   <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="_assets/showdiv.js"></script>
+</script>
 </body>
 </html>
